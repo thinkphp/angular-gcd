@@ -1,0 +1,14 @@
+.page-footer {
+  width: min(960px, calc(100% - 48px));
+  margin: 0 auto;
+  padding: 20px 0;
+  border-top: 1px solid #e8e9e5;
+  color: #a0a39d;
+  text-align: center;
+  font-size: 12px;
+  letter-spacing: 1px;
+}
+
+@media (max-width: 500px) {
+  .page-footer { width: calc(100% - 36px); }
+}

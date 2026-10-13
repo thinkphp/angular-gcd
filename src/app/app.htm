@@ -1,0 +1,43 @@
+<main class="page-shell">
+  <header class="topbar">
+    <a class="brand" href="/" aria-label="Euclid home">euclid<span>.</span></a>
+    <span class="topbar-note">A simple math tool</span>
+  </header>
+
+  <section class="workspace" aria-labelledby="page-title">
+    <div class="intro">
+      <p class="eyebrow">GREATEST COMMON DIVISOR</p>
+      <h1 id="page-title">Find the GCD.</h1>
+      <p class="description">Enter two integers to find their greatest common divisor.</p>
+    </div>
+
+    <section class="calculator" aria-label="GCD calculator">
+      <label class="field" for="a">
+        <span>First number <i>a</i></span>
+        <input id="a" type="number" step="1" [(ngModel)]="a" placeholder="e.g. 48" />
+      </label>
+      <label class="field" for="b">
+        <span>Second number <i>b</i></span>
+        <input id="b" type="number" step="1" [(ngModel)]="b" placeholder="e.g. 18" />
+      </label>
+
+      <button class="calculate-button" type="button" (click)="calculateGcd()">Calculate GCD <span aria-hidden="true">→</span></button>
+
+      @if (result !== null) {
+        <div class="result-panel" aria-live="polite">
+          <span class="result-label">GREATEST COMMON DIVISOR</span>
+          <strong>{{ result }}</strong>
+          <p>The GCD of {{ a }} and {{ b }}.</p>
+        </div>
+      }
+
+      @if (hasError) {
+        <p class="error-message" role="alert">Enter two valid integers to continue.</p>
+      }
+    </section>
+
+    <p class="method-note">Powered by Euclid's algorithm.</p>
+  </section>
+
+  <app-footer />
+</main>
